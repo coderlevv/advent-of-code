@@ -5,7 +5,7 @@ const input=fs.readFileSync('input', 'utf-8')
 let s = 0, max = 0
 for (let n of input.split(/\n/)) {
 	// parse number
-	n = parseInt(n);
+	n = parseInt(n)
 	// if there is a number add to sum per elf	
 	if (n) {
 		s += n
