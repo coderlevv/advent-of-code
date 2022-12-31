@@ -1,4 +1,3 @@
-#!/bin/python3
 def snafu2dec(s):
     """Convert SNAFU to decimal.
 
