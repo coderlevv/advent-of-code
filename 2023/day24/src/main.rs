@@ -1,8 +1,7 @@
 use std::fs::File;
 use std::io::{BufRead, BufReader};
 
-mod part1;
-mod part2;
+mod solve;
 mod stone;
 
 fn main() {
@@ -17,6 +16,5 @@ fn main() {
         }
     }
     
-    part1::solve(&input);
-    //part2::solve(&input);
+    solve::solve(&input);
 }
