@@ -8,59 +8,61 @@ fn arrange(combs: Vec<char>, groups: Vec<i32>, open: bool) -> u64 {
     let end_of_group: bool = groups.len() == 1;
     
     if group >= 0 {
-        if current == '#' {
-            let new_comb = &combs[1..];
-            let mut new_groups: Vec<i32> = vec![group - 1];
-            new_groups.extend(&groups[1..]);
-            return arrange(new_comb.to_vec(), new_groups.clone(), true);
-        }
-        
-        if current == '.' {
-            if open && group != 0 {
-                return 0;
-            }
-            if end_of_spring {
-                if end_of_group && group == 0 { return 1; } else { return 0; }
-            }
-            if open {
+        match current {
+            '#' => {
                 let new_comb = &combs[1..];
-                let mut new_groups: Vec<i32> = vec![];
-                if end_of_group {
-                    new_groups.push(0);
-                } else {
-                    new_groups.extend(&groups[1..]);
+                let mut new_groups: Vec<i32> = vec![group - 1];
+                new_groups.extend(&groups[1..]);
+                return arrange(new_comb.to_vec(), new_groups.clone(), true);
+            },
+            '.' => {
+                if open && group != 0 {
+                    return 0;
                 }
-                return arrange(new_comb.to_vec(), new_groups.clone(), false);
-            } else {
-                let new_comb = &combs[1..];
-                return arrange(new_comb.to_vec(), groups.clone(), false);
-            }
-        }
-        if current == '?' {
-            if open {
-                if group == 0 {
-                let new_comb = &combs[1..];
-                let mut new_groups: Vec<i32> = vec![];
-                if end_of_group {
-                    new_groups.push(0);
-                } else {
-                    new_groups.extend(&groups[1..]);
+                if end_of_spring {
+                    if end_of_group && group == 0 { return 1; } else { return 0; }
                 }
-                return arrange(new_comb.to_vec(), new_groups.clone(), false);
+                if open {
+                    let new_comb = &combs[1..];
+                    let mut new_groups: Vec<i32> = vec![];
+                    if end_of_group {
+                        new_groups.push(0);
+                    } else {
+                        new_groups.extend(&groups[1..]);
+                    }
+                    return arrange(new_comb.to_vec(), new_groups.clone(), false);
+                } else {
+                    let new_comb = &combs[1..];
+                    return arrange(new_comb.to_vec(), groups.clone(), false);
+                }
+            },
+            '?' => {
+                if open {
+                    if group == 0 {
+                    let new_comb = &combs[1..];
+                    let mut new_groups: Vec<i32> = vec![];
+                    if end_of_group {
+                        new_groups.push(0);
+                    } else {
+                        new_groups.extend(&groups[1..]);
+                    }
+                    return arrange(new_comb.to_vec(), new_groups.clone(), false);
+                    } else {
+                        let new_comb = &combs[1..];
+                        let mut new_groups: Vec<i32> = vec![group - 1];
+                        new_groups.extend(&groups[1..]);
+                        return arrange(new_comb.to_vec(), new_groups.clone(), true);
+                    }
                 } else {
                     let new_comb = &combs[1..];
                     let mut new_groups: Vec<i32> = vec![group - 1];
                     new_groups.extend(&groups[1..]);
-                    return arrange(new_comb.to_vec(), new_groups.clone(), true);
+                    let a = arrange(new_comb.to_vec(), new_groups.clone(), true);
+                    let b = arrange(new_comb.to_vec(), groups.clone(), false);
+                    return a + b;
                 }
-            } else {
-                let new_comb = &combs[1..];
-                let mut new_groups: Vec<i32> = vec![group - 1];
-                new_groups.extend(&groups[1..]);
-                let a = arrange(new_comb.to_vec(), new_groups.clone(), true);
-                let b = arrange(new_comb.to_vec(), groups.clone(), false);
-                return a + b;
-            }
+            },
+            _ => panic!("Unknown symbol!")
         }
     }
     // if group < 0, return 0
