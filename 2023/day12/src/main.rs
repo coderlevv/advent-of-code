@@ -4,7 +4,6 @@ use std::io::{BufRead, BufReader};
 mod part1;
 mod part2;
 mod search;
-mod thread;
 
 fn main() {
     let mut input = Vec::new();
@@ -18,6 +17,6 @@ fn main() {
         }
     }
     
-    //part1::solve(&input);
+    part1::solve(&input);
     part2::solve(&input);
 }
