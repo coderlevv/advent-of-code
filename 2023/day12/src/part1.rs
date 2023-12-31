@@ -1,4 +1,4 @@
-use crate::search::count_arrangements;
+use crate::arrange::count_arrangements;
 //use crate::search::search; 
 
 pub fn solve(input: &[String]) {

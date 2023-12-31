@@ -3,7 +3,7 @@ use std::io::{BufRead, BufReader};
 
 mod part1;
 mod part2;
-mod search;
+mod arrange;
 
 fn main() {
     let mut input = Vec::new();

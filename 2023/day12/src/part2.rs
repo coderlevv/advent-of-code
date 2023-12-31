@@ -1,4 +1,4 @@
-use crate::search::count_arrangements;
+use crate::arrange::count_arrangements;
 
 pub fn solve(input: &[String]) {
     let mut count: u64 = 0;
