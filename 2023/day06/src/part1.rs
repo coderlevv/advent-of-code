@@ -1,4 +1,4 @@
-pub fn solve(input: &Vec<String>) {
+pub fn solve(input: &[String]) {
     let time: Vec<u32> = input[0][5..]
         .split_whitespace()
         .map(|t| t.parse::<u32>().unwrap())

@@ -1,9 +1,4 @@
-pub fn solve(input: &Vec<String>) {
-    let time: Vec<u64> = input[0][5..]
-        .split_whitespace()
-        .map(|t| t.parse::<u64>().unwrap())
-        .collect();
-
+pub fn solve(input: &[String]) {
     let race_time: u64 = input[0][5..]
         .chars()
         .filter(|c| !c.is_whitespace())
@@ -17,8 +12,6 @@ pub fn solve(input: &Vec<String>) {
         .fold(String::new(), |a, b| format!("{}{}", a, b))
         .parse::<u64>()
         .unwrap();
-
-    println!("{},{}", race_time, best_dist);
 
     let mut possible: Vec<u64> = vec![];
     let mut count: u64 = 0;
