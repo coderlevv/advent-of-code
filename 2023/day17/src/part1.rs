@@ -16,8 +16,9 @@ pub fn solve(input: &[String]) {
     let start: Position = (0, 0);
     let end: Position = (grid[0].len()-1, grid.len()-1);
     let cost = path::find_path(&grid, start, end);
-    let end: Vec<_> = cost.iter()
+    let mut res: Vec<_> = cost.iter()
         .filter(|(k, _)| k.0 == end.0 && k.1 == end.1)
         .collect();
-    println!("{:?}", end);
+    res.sort_by(|a, b| a.1.cmp(b.1));
+    println!("{:?}", res[0].1);
 }

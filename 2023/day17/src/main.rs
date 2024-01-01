@@ -18,6 +18,6 @@ fn main() {
         }
     }
     
-    //part1::solve(&input);
+    part1::solve(&input);
     part2::solve(&input);
 }
