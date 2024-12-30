@@ -18,6 +18,9 @@ pids/
 *.pid
 *.pid.lock
 
+# Editor and IDE-specific files
+.vscode/
+.vscode/*
 *.swp
 
 # Temporary files

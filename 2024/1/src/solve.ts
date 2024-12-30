@@ -5,16 +5,17 @@ const readInput = (inputFile: string) => {
     fs.readFile(inputFile, (err, data) => {
       if (err) {
         reject(err);
+      } else {
+        const lines = data.toString().trim().split("\n");
+        const seq1: number[] = [];
+        const seq2: number[] = [];
+        for (const line of lines) {
+          const [n1, n2] = line.split(/\s+/).map(Number);
+          seq1.push(n1);
+          seq2.push(n2);
+        }
+        resolve([seq1.sort(), seq2.sort()]);
       }
-      const lines = data.toString().trim().split("\n");
-      const seq1: number[] = [];
-      const seq2: number[] = [];
-      for (const line of lines) {
-        const [n1, n2] = line.split(/\s+/).map(Number);
-        seq1.push(n1);
-        seq2.push(n2);
-      }
-      resolve([seq1.sort(), seq2.sort()]);
     });
   });
 };
@@ -24,7 +25,7 @@ async function solve(): Promise<[number, number]> {
   try {
     nums = (await readInput("input")) as number[][];
   } catch (err) {
-    console.error(err);
+    throw err;
   }
 
   let dist = 0;
@@ -39,4 +40,10 @@ async function solve(): Promise<[number, number]> {
 
 solve()
   .then((res) => console.log(res))
-  .catch((err) => console.log(err));
+  .catch((err) => {
+    if ((err as NodeJS.ErrnoException).code === 'ENOENT') {
+      console.error('Please provide input file!');
+    } else {
+      console.error('An unexpected error occurred:', err);
+    }
+  });
