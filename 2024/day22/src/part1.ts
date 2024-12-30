@@ -25,9 +25,10 @@ async function solve() {
   let res: number[] = [];
   for (const line of lines) {
     let gen = pseudo(Number(line));
-    for (let i = 0; i < 1999; i++) gen.next();
+    for (let i = 0; i < 2000; i++) gen.next();
     let n = gen.next();
-    res.push(n.value);
+    if (!n.done)
+      res.push(n.value);
   }
   return res.reduce((a, b) => a + b);
 }
