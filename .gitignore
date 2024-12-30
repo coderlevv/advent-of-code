@@ -1,3 +1,36 @@
 input
 input.txt
 test_input
+
+# Node.js dependencies
+node_modules/
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime data
+pids/
+*.pid
+*.pid.lock
+
+*.swp
+
+# Temporary files
+temp/
+tmp/
+.cache/
+*.temp
+*.tmp
+
+# Build artifacts
+dist/
+build/
+out/
+
+# Lockfiles
+*.lock
