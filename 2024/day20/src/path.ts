@@ -7,20 +7,24 @@ const DISPL: Position[] = [
   [0, -1], [1, 0], [0, 1], [-1, 0] 
 ];
 
-function adjacent(curr: Position, grid: string[][]): Position[] {
+function adjacent(curr: Position, grid: string[][], block: string = "#"): Position[] {
     let adj: Position[] = [];
     let [x, y] = curr;
     for (const [dx, dy] of DISPL) {
       let ax = x + dx;
       let ay = y + dy;
-      if (ax < 0 && ax >= grid[0].length && ay < 0 && ay >= grid.length)
+      if (ax <= 0 || ax >= grid[0].length-1 || ay <= 0 || ay >= grid.length-1)
         continue;
-      if (grid[ay][ax] !== "#") adj.push([ax, ay]); 
+      if (grid[ay][ax] !== block) adj.push([ax, ay]); 
     }
     return adj;
   }
   
-  export function findPath(start: Position, goal: Position, grid: string[][]): Position[] {
+  export function findPath(
+    start: Position,
+    goal: Position,
+    grid: string[][]
+  ): Position[] {
     let path: Position[] = [];
     let front = new PriorityQueue<{ pos: Position, priority: number }>();
     let cameFrom = new Map<string, string|null>();
