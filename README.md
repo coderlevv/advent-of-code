@@ -13,6 +13,4 @@ solutions step by step.
 I was picking up some [Rust](https://www.rust-lang.org/) over the last two years, so this years AoC was a great opportunity to apply my newly aquired knowledge of the language. It was another great AoC experience and I'd say I have a good deal of Rust experience under the belt now. Looking forward to the next systems programming project...  
 
 ## 2024
-This year's Advent of Code was again an exciting journey into solving challenges while honing my TypeScript skills. My goal was to use this event as an opportunity to get more comfortable with TypeScript, and I’m happy to say it worked out very well!
-
-Despite the challenges (mostly day 21 and some part 2 challenges), the experience was incredibly rewarding. Advent of Code has become a cherished tradition in my year—a time to dive into code, learn, and grow as a problem solver with programming skills. It's now firmly embedded in my schedule, much like the holiday classic, "It's the Most Wonderful Time of the Year"! 😊
+This year, my focus was on getting familiar with TypeScript, and the event provided an excellent platform to dive deeper into the language. While most days went smoothly, there were some real brainteasers (mostly day 21 and some part 2 challenges)! Advent of Code has become a cherished tradition in my year, offering a blend of fun, learning, and problem-solving. I’m already looking forward to next year’s challenges!
