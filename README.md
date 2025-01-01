@@ -24,6 +24,6 @@ For the 2024 Advent of Code, I embraced a minimalist and distraction-free enviro
 - **Console-Only Workflow:** Staying true to minimalism, I worked entirely within the console:
   - **Vim** served as my IDE, fully embodying the philosophy described in *Practical Vim: Edit Text at the Speed of Thought*. With the **ALE**, **eslint**, and **prettier** plugins, I had real-time linting, error checking, and formatting seamlessly integrated—combining the efficiency of a console-based workflow with modern development tools.
   - **screen** allowed me to efficiently manage and switch between multiple terminal sessions, keeping my workspace organized and productive.
-- **Programming Language:** All puzzles were implemented in **TypeScript**, making it an ideal opportunity to deepen my understanding of the language.
+- **Programming Language:** All puzzles (well, almost all 😊) were implemented in **TypeScript**, making it an ideal opportunity to deepen my understanding of the language.
 
 This minimalist setup, free of unnecessary distractions, provided the perfect environment to focus entirely on problem-solving. Tools like Vim and its powerful plugins ensured a smooth and efficient coding experience, while the console-based workflow kept things simple and productive.
