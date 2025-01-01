@@ -19,8 +19,7 @@ This year, my focus was on getting familiar with TypeScript, and the event provi
 
 For the 2024 Advent of Code, I embraced a minimalist and distraction-free environment to fully focus on solving the puzzles. This approach ensured that my attention was entirely on the problem at hand. Here's an overview of my setup:
 
-- **Operating System:** A [Linux From Scratch (LFS) system](https://www.linuxfromscratch.org/), version 12.2, built completely from sources.
-- **Custom Build Tool:** I used **lfshelper**, a program I developed to (semi-)automate the LFS build process. It's available [on GitHub](https://github.com/coderlevv/lfshelper).
+- **Operating System:** A [Linux From Scratch (LFS) system](https://www.linuxfromscratch.org/), version 12.2, built completely from sources using **lfshelper**, a program I developed to (semi-)automate the LFS build process. It's available [on GitHub](https://github.com/coderlevv/lfshelper).
 - **Console-Only Workflow:** Staying true to minimalism, I worked entirely within the console:
   - **Vim** served as my IDE, fully embodying the philosophy described in *Practical Vim: Edit Text at the Speed of Thought*. With the **ALE**, **eslint**, and **prettier** plugins, I had real-time linting, error checking, and formatting seamlessly integrated—combining the efficiency of a console-based workflow with modern development tools.
   - **screen** allowed me to efficiently manage and switch between multiple terminal sessions, keeping my workspace organized and productive.
